@@ -1,0 +1,6 @@
+//Database connection 
+
+		String data = "jdbc:odbc:systemdsnname";
+		Connection conn = null;
+		Statement st = null;
+		ResultSet rs = null;
