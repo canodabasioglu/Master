@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbUsers" table="TB_USERS"  lazy="false">
+		
+		<id
+			column="USERS_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="SURNAME"
+			length="50"
+			name="Surname"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="USERNAME"
+			length="50"
+			name="Username"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="USER_TYPE"
+			length="2"
+			name="UserType"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="MEMBER_DATE"
+			length="23"
+			name="MemberDate"
+			not-null="false"
+			type="timestamp"
+		 />
+		<property
+			column="OCCUPATION"
+			length="50"
+			name="Occupation"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="WEBSITE"
+			length="50"
+			name="Website"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="FAX"
+			length="10"
+			name="Fax"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="LOGIN_IP"
+			length="20"
+			name="LoginIp"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="SENT_EVENTS"
+			length="1"
+			name="SentEvents"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="EMAIL"
+			length="50"
+			name="Email"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="PHONE2"
+			length="10"
+			name="Phone2"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="LOGIN_DATE"
+			length="23"
+			name="LoginDate"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="SEX"
+			length="5"
+			name="Sex"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="GSM"
+			length="10"
+			name="Gsm"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="BIRTH_PLACE"
+			length="50"
+			name="BirthPlace"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="PHONE1"
+			length="10"
+			name="Phone1"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="NAME"
+			length="50"
+			name="Name"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="BIRTH_DATE"
+			length="23"
+			name="BirthDate"
+			not-null="false"
+			type="timestamp"
+		 />
+		<property
+			column="USERPASSWORD"
+			length="50"
+			name="Userpassword"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="USER_PROGRAMS"
+			length="2"
+			name="UserPrograms"
+			not-null="false"
+			type="integer"
+		 />
+		 <many-to-one
+			class="TbRole"
+			name="Role"
+			not-null="true"
+		>
+			<column name="ROLE_ID" />
+		</many-to-one>
+
+		<set inverse="true" name="TbOrderSet">
+			<key column="USERS_ID" />
+			<one-to-many class="TbOrder" />
+		</set>
+		<set inverse="true" name="TbLastvisitSet">
+			<key column="USERS_ID" />
+			<one-to-many class="TbLastvisit" />
+		</set>
+		<set inverse="true" name="TbFormSet">
+			<key column="USERS_ID" />
+			<one-to-many class="TbForm" />
+		</set>
+		<set inverse="true" name="TbOrderlineSet">
+			<key column="USERS_ID" />
+			<one-to-many class="TbOrderline" />
+		</set>
+		<set inverse="true" name="TbFavouriteSet">
+			<key column="USERS_ID" />
+			<one-to-many class="TbFavourite" />
+		</set>
+		<set inverse="true" name="TbPointSet">
+			<key column="USERS_ID" />
+			<one-to-many class="TbPoint" />
+		</set>
+		<set inverse="true" name="TbAddressSet">
+			<key column="USERS_ID" />
+			<one-to-many class="TbAddress" />
+		</set>
+		<set inverse="true" name="TbCommentSet">
+			<key column="USERS_ID" />
+			<one-to-many class="TbComment" />
+		</set>
+		<set inverse="true" name="TbPollSet">
+			<key column="USERS_ID" />
+			<one-to-many class="TbPoll" />
+		</set>
+	</class>
+</hibernate-mapping>

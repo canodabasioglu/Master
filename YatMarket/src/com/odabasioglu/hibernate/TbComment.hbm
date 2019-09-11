@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbComment" table="TB_COMMENT" lazy="false">
+		
+		<id
+			column="COMMENT_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="MODIFIED_DATE"
+			length="23"
+			name="ModifiedDate"
+			not-null="false"
+			type="timestamp"
+		 />
+		<property
+			column="COMMENT"
+			name="Comment"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="POINT"
+			length="10"
+			name="Point"
+			not-null="true"
+			type="integer"
+		 />
+
+		<many-to-one lazy="false"
+			class="TbProduct"
+			name="Product"
+			not-null="true"
+		>
+			<column name="PRODUCT_ID" />
+		</many-to-one>
+		<many-to-one lazy="false"
+			class="TbUsers"
+			name="Users"
+			not-null="true"
+		>
+			<column name="USERS_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

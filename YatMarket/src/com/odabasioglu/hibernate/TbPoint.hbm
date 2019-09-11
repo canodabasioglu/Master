@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbPoint" table="TB_POINT">
+		
+		<id
+			column="POINT_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="MODIFIED_DATE"
+			length="23"
+			name="ModifiedDate"
+			not-null="false"
+			type="timestamp"
+		 />
+		<property
+			column="POINT_TYPE"
+			length="2"
+			name="PointType"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="POINT"
+			length="6"
+			name="Point"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="POINT_STATUS"
+			length="2"
+			name="PointStatus"
+			not-null="false"
+			type="integer"
+		 />
+
+		<many-to-one
+			class="TbUsers"
+			name="Users"
+			not-null="true"
+		>
+			<column name="USERS_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

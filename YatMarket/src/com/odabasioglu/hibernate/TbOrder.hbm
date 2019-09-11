@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbOrder" table="TB_ORDER">
+		
+		<id
+			column="ORDER_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="SHIPMENT_ADDRESS"
+			length="10"
+			name="ShipmentAddress"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="MODIFIED_DATE"
+			length="23"
+			name="ModifiedDate"
+			not-null="false"
+			type="timestamp"
+		 />
+		<property
+			column="PAYMENT_TYPE"
+			length="2"
+			name="PaymentType"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="SHIPMENT_TYPE"
+			length="2"
+			name="ShipmentType"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="ORDER_STATUS"
+			length="2"
+			name="OrderStatus"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="PAYMENT_ADDRESS"
+			length="10"
+			name="PaymentAddress"
+			not-null="true"
+			type="integer"
+		 />
+
+		<many-to-one
+			class="TbUsers"
+			name="Users"
+			not-null="true"
+		>
+			<column name="USERS_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

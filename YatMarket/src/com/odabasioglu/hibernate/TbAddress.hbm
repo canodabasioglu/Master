@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbAddress" table="TB_ADDRESS" lazy="false">
+		
+		<id
+			column="ADDRESS_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="STATE"
+			length="50"
+			name="State"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="TAX_NO"
+			length="12"
+			name="TaxNo"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="LINE1"
+			length="200"
+			name="Line1"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="COUNTRY"
+			length="30"
+			name="Country"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="POSTAL_CODE"
+			length="5"
+			name="PostalCode"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="LINE2"
+			length="200"
+			name="Line2"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="SHORT_NAME"
+			length="50"
+			name="ShortName"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="TAX_OFFICE"
+			length="50"
+			name="TaxOffice"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="CITY"
+			length="30"
+			name="City"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="ADDRESS_TYPE"
+			length="2"
+			name="AddressType"
+			not-null="false"
+			type="integer"
+		 />
+
+		<many-to-one
+			class="TbUsers"
+			name="Users"
+			not-null="true" lazy="false"
+		>
+			<column name="USERS_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

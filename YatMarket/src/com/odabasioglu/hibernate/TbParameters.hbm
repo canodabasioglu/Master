@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class
+		name="TbParameters"
+		table="tb_parameters"
+	>
+		<id
+			name="Id"
+			type="integer"
+			column="PARAMETER_ID"
+		>
+			<generator class="identity"/>
+		</id>
+
+		<property
+			name="Name"
+			column="NAME"
+			type="string"
+			not-null="true"
+			length="20"
+		/>
+		<property
+			name="Value"
+			column="VALUE"
+			type="string"
+			not-null="true"
+			length="200"
+		/>
+		<property
+			name="Condition"
+			column="CONDITIONS"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="Custom"
+			column="CUSTOM"
+			type="string"
+			not-null="false"
+			length="200"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

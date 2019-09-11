@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbCategory" table="TB_CATEGORY">
+		
+		<id
+			column="CATEGORY_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="MODIFIED_DATE"
+			length="23"
+			name="ModifiedDate"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="IS_MAIN"
+			length="1"
+			name="IsMain"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="MAIN_CATEGORY_ID"
+			length="10"
+			name="MainCategoryId"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="CATEGORY_DESCRIPTION"
+			length="200"
+			name="CategoryDescription"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="CATEGORY_NAME"
+			length="50"
+			name="CategoryName"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="CATEGORY_TYPE"
+			length="2"
+			name="CategoryType"
+			not-null="false"
+			type="integer"
+		 />
+        <property
+			name="Thumbnail"
+			column="THUMBNAIL"
+			type="binary"
+			not-null="false"
+		/>
+		<set inverse="true" name="TbProductSet">
+			<key column="CATEGORY_ID" />
+			<one-to-many class="TbProduct" />
+		</set>
+	</class>
+</hibernate-mapping>

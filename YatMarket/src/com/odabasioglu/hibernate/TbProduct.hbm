@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbProduct" table="TB_PRODUCT" lazy="false">
+		
+		<id
+			column="PRODUCT_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="PRODUCT_CODE"
+			length="12"
+			name="ProductCode"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="PRODUCT_STATUS"
+			length="2"
+			name="ProductStatus"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			name="Thumbnail"
+			column="THUMBNAIL"
+			type="binary"
+			not-null="false"
+		/>
+		<property
+			name="ThumbnailSmall"
+			column="THUMBNAILSMALL"
+			type="binary"
+			not-null="false"
+		/>
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="MODIFIED_DATE"
+			length="23"
+			name="ModifiedDate"
+			not-null="false"
+			type="timestamp"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		
+		<property
+			column="PRICE"
+			length="10"
+			name="Price"
+			not-null="true"
+			type="float"
+		 />
+		<property
+			column="NAME"
+			length="200"
+			name="Name"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="DESCRIPTION"
+			name="Description"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="CURRENCY_TYPE"
+			length="18"
+			name="CurrencyType"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="STOCK_STATUS"
+			length="2"
+			name="StockStatus"
+			not-null="true"
+			type="integer"
+		 />
+
+		<many-to-one
+			class="TbCategory"
+			name="Category"
+			not-null="true" lazy="false"
+		>
+			<column name="CATEGORY_ID" />
+		</many-to-one>
+		<set inverse="true" name="TbTopsalesSet">
+			<key column="PRODUCT_ID" />
+			<one-to-many class="TbTopsales" />
+		</set>
+		<set inverse="true" name="TbOrderlineSet">
+			<key column="PRODUCT_ID" />
+			<one-to-many class="TbOrderline" />
+		</set>
+		<set inverse="true" name="TbCampaignSet">
+			<key column="PRODUCT_ID" />
+			<one-to-many class="TbCampaign" />
+		</set>
+		<set inverse="true" name="TbDiscountSet">
+			<key column="PRODUCT_ID" />
+			<one-to-many class="TbDiscount" />
+		</set>
+		<set inverse="true" name="TbLastvisitSet">
+			<key column="PRODUCT_ID" />
+			<one-to-many class="TbLastvisit" />
+		</set>
+		<set inverse="true" name="TbFavouriteSet">
+			<key column="PRODUCT_ID" />
+			<one-to-many class="TbFavourite" />
+		</set>
+		<set inverse="true" name="TbCommentSet">
+			<key column="PRODUCT_ID" />
+			<one-to-many class="TbComment" />
+		</set>
+	</class>
+</hibernate-mapping>

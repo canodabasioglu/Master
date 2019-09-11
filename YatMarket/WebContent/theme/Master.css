@@ -1,0 +1,207 @@
+TABLE {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana,Helvetica
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #c8d1d7; FONT-SIZE: 11px; SCROLLBAR-HIGHLIGHT-COLOR: #eaf0f7; SCROLLBAR-SHADOW-COLOR: #95afc4; COLOR: #666666; SCROLLBAR-3DLIGHT-COLOR: #d6dde2; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #efefef; FONT-FAMILY: Verdana,Helvetica; SCROLLBAR-DARKSHADOW-COLOR: #7294af
+}
+INPUT.top_bar_search {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: verdana,helvetica
+}
+INPUT.light {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; BORDER-LEFT-COLOR: #aaaaaa; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #aaaaaa; COLOR: #000000; BORDER-TOP-COLOR: #aaaaaa; FONT-FAMILY: verdana,helvetica; BACKGROUND-COLOR: #ffffff; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #aaaaaa
+}
+SELECT.light {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 11px; BORDER-LEFT-COLOR: #aaaaaa; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #aaaaaa; COLOR: #000000; BORDER-TOP-COLOR: #aaaaaa; FONT-FAMILY: verdana,helvetica; BACKGROUND-COLOR: #ffffff; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #aaaaaa
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 17px; COLOR: #666666; FONT-STYLE: italic; FONT-FAMILY: Tahoma, Verdana, Arial
+}
+.separator {
+	BACKGROUND-COLOR: #eeeeee
+}
+UNKNOWN {
+	FONT-SIZE: 10px
+}
+.menu {
+	FONT-SIZE: 11px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.menu:link {
+	FONT-SIZE: 11px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.menu:active {
+	FONT-SIZE: 11px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.menu:visited {
+	FONT-SIZE: 11px; COLOR: #666666; TEXT-DECORATION: none
+}
+A.menu:hover {
+	FONT-SIZE: 11px; COLOR: #000000; TEXT-DECORATION: none
+}
+.top_bar {
+	FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+A.top_bar:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+.top_menu {
+	FONT-SIZE: 11px; COLOR: #888888; FONT-FAMILY: Tahoma,Verdana,Arial; TEXT-DECORATION: none
+}
+.menu_top2 {
+	FONT-SIZE: 10px; COLOR: #888888; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+A.menu_top2:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.footer {
+	FONT-SIZE: 10px; COLOR: #888888; FONT-FAMILY: Verdana, Arial, sans-serif
+}
+
+.product_menu {
+	COLOR: #154a9f;
+	font-family: Tahoma, Verdana;
+	font-weight: bold;
+	font-size: 10pt;
+	text-align: left
+}
+
+.product_price_other {
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Verdana,Helvetica;
+	color: silver;
+	text-decoration: line-through
+}
+
+.product_title {
+	COLOR: #154a9f;
+	font-family: Tahoma, Verdana;
+	font-weight: bold;
+	font-size: 11pt;
+	text-align: left;
+	text-decoration: underline
+	            
+}
+.strong {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Verdana,Arial
+}
+.red {
+	COLOR: #bb0000; TEXT-DECORATION: none
+}
+.top_user {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana,Arial
+}
+.smallText {
+	FONT-SIZE: 10px; COLOR: #aaaaaa; TEXT-DECORATION: none
+}
+.box_title {
+	FONT: 9pt Verdana,Arial; COLOR: #aaaaaa
+}
+TD.box_title {
+	FONT: bold 8pt Verdana,Arial; COLOR: #ffffff; BACKGROUND-COLOR: #1955b8
+}
+TD.page_title {
+	FONT: bold 10pt Verdana,Arial; COLOR: #154a9f;
+}
+A.page_title:hover {
+	COLOR: #000000; FONT-FAMILY: Tahoma, Verdana; TEXT-DECORATION: underline
+}
+.menu_left_strong {
+	FONT: bold 8pt Tahoma, Verdana; COLOR: #666666
+}
+.menu_left_normal {
+	FONT: 8pt Tahoma, Verdana; COLOR: #666666
+}
+
+.menu_left {
+	FONT: 9pt Tahoma, Verdana; COLOR: #666666; TEXT-DECORATION: none
+}
+A.menu_left:hover {
+	COLOR: #000000; FONT-FAMILY: Tahoma, Verdana; TEXT-DECORATION: underline
+}
+.list_cat {
+	FONT-SIZE: 11px; COLOR: #888888; FONT-FAMILY: Tahoma, Verdana; TEXT-DECORATION: none
+}
+A.list_cat {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #888888; FONT-FAMILY: Tahoma, Verdana; TEXT-DECORATION: none
+}
+A.list_cat:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Tahoma, Verdana; TEXT-DECORATION: none
+}
+.light {
+	FONT-SIZE: 11px; COLOR: #aaaaaa; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.light:link {
+	FONT-SIZE: 11px; COLOR: #aaaaaa; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+A.light:active {
+	FONT-SIZE: 11px; COLOR: #aaaaaa; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+A.light:visited {
+	FONT-SIZE: 11px; COLOR: #aaaaaa; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+A.light:hover {
+	FONT-SIZE: 11px; COLOR: #666666; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+.min {
+	FONT-SIZE: 10px; COLOR: #444444; FONT-FAMILY: Verdana, Arial, sans-serif; TEXT-DECORATION: none
+}
+A.min:link {
+	FONT-SIZE: 10px; COLOR: #444444; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+A.min:active {
+	FONT-SIZE: 10px; COLOR: #444444; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+A.min:visited {
+	FONT-SIZE: 10px; COLOR: #444444; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+A.min:hover {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: underline
+}
+.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #5551cc; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+.info {
+	FONT-SIZE: 12px; COLOR: #888888; FONT-FAMILY: Verdana,Arial; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+
+.small_top {
+	FONT-SIZE: 11px; COLOR: #999999; FONT-FAMILY: Arial,Verdana
+}
+.price {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #ff0000; FONT-FAMILY: Verdana,Arial; TEXT-DECORATION: none
+}
+.yuzde {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #4A5D85;
+	background-color: #fcfcfc;
+	
+	font-variant: small-caps;
+}
+.butonlar {
+	color: #ff8040;
+	text-decoration: underline;
+	font-size: 10px;
+	font-family: Tahoma;
+	letter-spacing: 3px;
+	text-align: center;
+
+}
+
+.butonlar:link {
+	color: #ff8040;
+	text-decoration: underline;
+	font-size: 10px;
+	font-family: Tahoma;
+	letter-spacing: 3px;
+	text-align: center;
+	
+}
+
+.butonlar:hover {
+	color: red;
+	text-decoration: underline;
+	font-size: 10px;
+	font-family: Tahoma;
+	letter-spacing: 3px;
+	text-align: center;
+}

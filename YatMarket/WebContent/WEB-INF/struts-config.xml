@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+
+	<!-- Data Sources -->
+	<data-sources></data-sources>
+
+	<!-- Form Beans -->
+	<form-beans>
+		<form-bean name="parameterForm" type="com.odabasioglu.action.form.ParameterForm"></form-bean>
+		<form-bean name="userForm" type="com.odabasioglu.action.form.UserForm"></form-bean>
+		<form-bean name="newsForm" type="com.odabasioglu.action.form.NewsForm"></form-bean>
+		<form-bean name="currencyForm" type="com.odabasioglu.action.form.CurrencyForm"></form-bean>
+		<form-bean name="categoryForm" type="com.odabasioglu.action.form.CategoryForm"></form-bean>
+		<form-bean name="commentForm" type="com.odabasioglu.action.form.CommentForm"></form-bean>
+		<form-bean name="productForm" type="com.odabasioglu.action.form.ProductForm"></form-bean>
+		<form-bean name="userAddressForm" type="com.odabasioglu.action.form.UserAddressForm"></form-bean>
+		<form-bean name="orderlineForm" type="com.odabasioglu.action.form.OrderlineForm"></form-bean>
+		<form-bean name="customerFeedbackForm" type="com.odabasioglu.action.form.CustomerFeedbackForm"></form-bean>
+		<form-bean name="roleForm" type="com.odabasioglu.action.form.RoleForm"></form-bean>
+		<form-bean name="rightForm" type="com.odabasioglu.action.form.RightForm"></form-bean>
+	</form-beans>
+
+	<!-- Global Exceptions -->
+	<global-exceptions></global-exceptions>
+
+	<!-- Global Forwards -->
+	<global-forwards>
+		<forward name="exception" path="/jsp/message/error/unknown_error.jsp" />
+		<forward name="unknownError" path="/jsp/message/error/unknown_error.jsp" />
+		<forward name="sessionError" path="/jsp/user/login.jsp" />
+	</global-forwards>
+
+	<!-- Action Mappings -->
+	<action-mappings>
+		<action path="/userLogout" type="com.odabasioglu.action.user.UserLogoutAction">
+			<forward name="logout" path="/index.jsp"></forward>
+			<forward name="failure" path="/index.jsp"></forward>
+			<forward name="exception" path="/index.jsp"></forward>
+		</action>
+		<action path="/userLogin" type="com.odabasioglu.action.user.UserLoginAction" name="userForm" input="/jsp/user/login.jsp">
+			<forward name="userLogin" path="/jsp/user/user_index.jsp"></forward>
+			<forward name="adminLogin" path="/jsp/admin/admin_index.jsp"></forward>
+			<forward name="userError" path="/jsp/user/login.jsp"></forward>
+		</action>
+		<action path="/userAddressCreate" type="com.odabasioglu.action.user.UserAddressCreateAction" name="userAddressForm" input="/jsp/address/address_create.jsp">
+			<forward name="createAddressSuccess" path="/jsp/address/address_list.jsp"></forward>
+		</action>
+		<action path="/userAddressUpdate" type="com.odabasioglu.action.user.UserAddressUpdateAction" name="userAddressForm" input="/jsp/address/address_update.jsp">
+			<forward name="updateAddressSuccess" path="/jsp/address/address_list.jsp"></forward>
+		</action>
+		<action path="/userAddressDelete" type="com.odabasioglu.action.user.UserAddressDeleteAction">
+			<forward name="deleteAddressSuccess" path="/jsp/address/address_list.jsp"></forward>
+		</action>
+		<action path="/userAddressDetails" type="com.odabasioglu.action.user.UserAddressDetailsAction">
+			<forward name="updateAddressDetails" path="/jsp/address/address_update.jsp"></forward>
+		</action>
+		<action path="/userCreate" type="com.odabasioglu.action.user.UserCreateAction" name="userForm" input="/jsp/user/user_create.jsp">
+			<forward name="createSuccess" path="/jsp/user/login.jsp"></forward>
+			<forward name="userExists" path="/jsp/user/user_create.jsp"></forward>
+		</action>
+		<action path="/userUpdate" type="com.odabasioglu.action.user.UserUpdateAction" name="userForm" input="/jsp/user/user_update.jsp">
+			<forward name="updateSuccess" path="/jsp/user/user_index.jsp"></forward>
+		</action>
+		<action path="/userDelete" type="com.odabasioglu.action.user.UserDeleteAction">
+			<forward name="deleteUserSuccess" path="/jsp/admin/user_list.jsp"></forward>
+		</action>
+		<action path="/userPasswordRemind" type="com.odabasioglu.action.user.UserPasswordRemindAction" name="userForm" input="/jsp/user/user_reminder.jsp">
+			<forward name="remindPassword" path="/jsp/user/login.jsp"></forward>
+			<forward name="noSuchEmail" path="/jsp/user/user_reminder.jsp"></forward>
+		</action>
+		<action path="/userFavouriteDelete" type="com.odabasioglu.action.user.UserFavouriteDeleteAction">
+			<forward name="favouriteDelete" path="/jsp/favourite/favourite_view.jsp"></forward>
+		</action>
+		<action path="/userFavouriteCreate" type="com.odabasioglu.action.user.UserFavouriteCreateAction">
+			<forward name="favouriteCreate" path="/jsp/favourite/favourite_view.jsp"></forward>
+		</action>
+		<action path="/productCategoryView" type="com.odabasioglu.action.product.ProductCategoryViewAction">
+			<forward name="listMaincategory" path="/jsp/guest/product_category.jsp"></forward>
+			<forward name="userListMaincategory" path="/jsp/product/product_category.jsp"></forward>
+		</action>
+		<action path="/productSubcategoryView" type="com.odabasioglu.action.product.ProductSubCategoryViewAction">
+			<forward name="listSubcategory" path="/jsp/guest/product_subcategory.jsp"></forward>
+			<forward name="userListSubcategory" path="/jsp/product/product_subcategory.jsp"></forward>
+		</action>
+		<action path="/productDetailsView" type="com.odabasioglu.action.product.ProductDetailsViewAction">
+			<forward name="productDetails" path="/jsp/guest/product_view.jsp"></forward>
+			<forward name="userProductDetails" path="/jsp/product/product_view.jsp"></forward>
+		</action>
+		<action path="/orderLineCreate" type="com.odabasioglu.action.order.OrderLineCreateAction" name="orderlineForm" input="/jsp/product/product_viewPage.jsp">
+			<forward name="orderLineCreate" path="/jsp/order/order_line.jsp"></forward>
+		</action>
+		<action path="/orderLineDelete" type="com.odabasioglu.action.order.OrderLineDeleteAction">
+			<forward name="orderLineDelete" path="/jsp/order/order_line.jsp"></forward>
+		</action>
+		<action path="/orderPaymentAddressCreate" type="com.odabasioglu.action.order.OrderPaymentAddressCreateAction">
+			<forward name="orderPaymentTypeSelect" path="/jsp/order/order_payment.jsp"></forward>
+		</action>
+		<action path="/orderShipmentAddressCreate" type="com.odabasioglu.action.order.OrderShipmentAddressCreateAction">
+			<forward name="orderPaymentTypeSelect" path="/jsp/order/order_payment.jsp"></forward>
+			<forward name="orderPaymentAddressSelect" path="/jsp/address/payment_address.jsp"></forward>
+		</action>
+		<action path="/orderCreate" type="com.odabasioglu.action.order.OrderCreateAction">
+			<forward name="orderCreate" path="/jsp/order/order_confirmation.jsp"></forward>
+		</action>
+		<action path="/orderConfirm" type="com.odabasioglu.action.order.OrderConfirmAction">
+			<forward name="orderConfirmed" path="/jsp/order/order_view.jsp"></forward>
+		</action>
+		<action path="/orderDetails" type="com.odabasioglu.action.order.OrderDetailsAction">
+			<forward name="orderDetails" path="/jsp/order/order_details.jsp"></forward>
+			<forward name="orderDetailsAdmin" path="/jsp/admin/order_details.jsp"></forward>
+		</action>
+		<action path="/customerFeedbackCreate" type="com.odabasioglu.action.general.CustomerFeedbackCreateAction" name="customerFeedbackForm" input="/jsp/common/customerRelationsPage.jsp">
+			<forward name="feedbackCreate" path="/jsp/user/feedback_view.jsp"></forward>
+		</action>
+		<action path="/searchProduct" type="com.odabasioglu.action.general.SearchProductAction">
+			<forward name="searchList" path="/jsp/guest/product_search.jsp"></forward>
+			<forward name="userSearchList" path="/jsp/product/product_search.jsp"></forward>
+		</action>
+		<action path="/commentCreate" type="com.odabasioglu.action.product.ProductCommentCreateAction" name="commentForm" input="/jsp/product/product_comment_create.jsp">
+			<forward name="commentCreate" path="/jsp/product/product_comment_create.jsp"></forward>
+		</action>
+
+
+		<!-- All HyperLinks -->
+		<action path="/siteManager" type="com.odabasioglu.action.navigation.SiteManagerAction">
+
+			<!-- START GUEST MAPPINGS-->
+		
+			<forward name="homepage" path="/index.jsp"></forward>
+			<forward name="aboutUs" path="/jsp/guest/about_us.jsp"></forward>
+			<forward name="contactUs" path="/jsp/guest/contact_us.jsp"></forward>
+			<forward name="customerRelations" path="/jsp/guest/customer_relations.jsp"></forward>
+			<forward name="faq" path="/jsp/guest/faq.jsp"></forward>
+			<forward name="payment" path="/jsp/guest/payment.jsp"></forward>
+			<forward name="siteMap" path="/jsp/guest/site_map.jsp"></forward>
+			<forward name="orderDelivery" path="/jsp/guest/order_delivery.jsp"></forward>
+	
+			<!-- END GUEST MAPPINGS-->
+
+			<!-- START MEMBER MAPPINGS-->
+
+			<forward name="userHomepage" path="/jsp/user/user_index.jsp"></forward>
+			<forward name="userAboutUs" path="/jsp/user/about_us.jsp"></forward>
+			<forward name="userContactUs" path="/jsp/user/contact_us.jsp"></forward>
+			<forward name="userCustomerRelations" path="/jsp/user/customer_relations.jsp"></forward>
+			<forward name="userFaq" path="/jsp/user/faq.jsp"></forward>
+			<forward name="userOrderDelivery" path="/jsp/user/order_delivery.jsp"></forward>
+			<forward name="userPayment" path="/jsp/user/payment.jsp"></forward>
+			<forward name="userSiteMap" path="/jsp/user/site_map.jsp"></forward>
+			<forward name="userUpdate" path="/jsp/user/user_update.jsp"></forward>
+			<forward name="addressList" path="/jsp/address/address_list.jsp"></forward>
+			<forward name="addressCreate" path="/jsp/address/address_create.jsp"></forward>
+			<forward name="points" path="/jsp/order/order_point.jsp"></forward>
+			<forward name="orders" path="/jsp/order/order_view.jsp"></forward>
+			<forward name="favourites" path="/jsp/favourite/favourite_view.jsp"></forward>
+			<forward name="orderLines" path="/jsp/order/order_line.jsp"></forward>
+			<forward name="shipmentAddress" path="/jsp/address/shipment_address.jsp"></forward>
+			<forward name="paymentAddress" path="/jsp/address/payment_address.jsp"></forward>
+
+
+			<!-- END MEMBER MAPPINGS-->
+
+			<!-- START ADMIN MAPPINGS-->
+			<forward name="adminHomepage" path="/jsp/admin/admin_index.jsp"></forward>
+			<forward name="listContacts" path="/jsp/admin/user_list.jsp"></forward>
+			<forward name="listNews" path="/jsp/admin/news_list.jsp"></forward>
+			<forward name="listCurrency" path="/jsp/admin/currency_list.jsp"></forward>
+			<forward name="listCategory" path="/jsp/admin/category_list.jsp"></forward>
+			<forward name="listProduct" path="/jsp/admin/product_list.jsp"></forward>
+			<forward name="listOrder" path="/jsp/admin/order_list.jsp"></forward>
+			<forward name="listCampaign" path="/jsp/admin/campaign_list.jsp"></forward>	
+			<forward name="listLog" path="/jsp/admin/logs_list.jsp"></forward>	
+			<forward name="listRight" path="/jsp/admin/right_list.jsp"></forward>
+			<forward name="listRole" path="/jsp/admin/role_list.jsp"></forward>
+			<forward name="listParameters" path="/jsp/admin/parameters_list.jsp"></forward>
+			<!-- END ADMIN MAPPINGS-->
+
+		</action>
+		
+		<action path="/productCategoryDelete" type="com.odabasioglu.action.product.ProductCategoryDeleteAction">
+			<forward name="listMaincategory" path="/jsp/admin/category_list.jsp"></forward>
+		</action>
+		<action path="/productCategoryCreate" type="com.odabasioglu.action.product.ProductCategoryCreateAction" name="categoryForm" input="/jsp/admin/category_list.jsp">
+			<forward name="listMaincategory" path="/jsp/admin/category_list.jsp"></forward>
+		</action>
+		<action path="/productCategoryUpdate" type="com.odabasioglu.action.product.ProductCategoryUpdateAction" name="categoryForm" input="/jsp/admin/category_details.jsp">
+			<forward name="listMaincategory" path="/jsp/admin/category_list.jsp"></forward>
+		</action>
+		<action path="/productCreate" type="com.odabasioglu.action.product.ProductCreateAction" name="productForm" input="/jsp/admin/product_list.jsp">
+			<forward name="listProduct" path="/jsp/admin/product_list.jsp"></forward>
+		</action>
+		<action path="/productUpdate" type="com.odabasioglu.action.product.ProductUpdateAction" name="productForm" input="/jsp/admin/product_list.jsp">
+			<forward name="listProduct" path="/jsp/admin/product_list.jsp"></forward>
+		</action>
+		<action path="/productDelete" type="com.odabasioglu.action.product.ProductDeleteAction">
+			<forward name="listProduct" path="/jsp/admin/product_list.jsp"></forward>
+		</action>
+		<action path="/newsCreate" type="com.odabasioglu.action.general.NewsCreateAction" name="newsForm" input="/jsp/admin/news_list.jsp">
+			<forward name="listNews" path="/jsp/admin/news_list.jsp"></forward>
+		</action>
+		<action path="/newsUpdate" type="com.odabasioglu.action.general.NewsUpdateAction" name="newsForm" input="/jsp/admin/news_details.jsp">
+			<forward name="listNews" path="/jsp/admin/news_list.jsp"></forward>
+		</action>
+		
+		<action path="/newsDelete" type="com.odabasioglu.action.general.NewsDeleteAction">
+			<forward name="listNews" path="/jsp/admin/news_list.jsp"></forward>
+		</action>
+		<action path="/currencyCreate" type="com.odabasioglu.action.general.CurrencyCreateAction" name="currencyForm" input="/jsp/admin/currency_list.jsp">
+			<forward name="listCurrency" path="/jsp/admin/currency_list.jsp"></forward>
+		</action>
+		<action path="/currencyDelete" type="com.odabasioglu.action.general.CurrencyDeleteAction">
+			<forward name="listCurrency" path="/jsp/admin/currency_list.jsp"></forward>
+		</action>
+		<action path="/currencyUpdate" type="com.odabasioglu.action.general.CurrencyUpdateAction" name="currencyForm" input="/jsp/admin/currency_details.jsp">
+			<forward name="listCurrency" path="/jsp/admin/currency_list.jsp"></forward>
+		</action>
+		<action path="/logsDelete" type="com.odabasioglu.action.general.LogsDeleteAction">
+			<forward name="listLogs" path="/jsp/admin/logs_list.jsp"></forward>
+		</action>
+		<action path="/rightCreate" type="com.odabasioglu.action.general.RightCreateAction" name="rightForm" input="/jsp/admin/right_list.jsp">
+			<forward name="listRight" path="/jsp/admin/right_list.jsp"></forward>
+		</action>
+		<action path="/rightDelete" type="com.odabasioglu.action.general.RightDeleteAction">
+			<forward name="listRight" path="/jsp/admin/right_list.jsp"></forward>
+		</action>
+		<action path="/roleCreate" type="com.odabasioglu.action.general.RoleCreateAction" name="roleForm" input="/jsp/admin/role_list.jsp">
+			<forward name="listRole" path="/jsp/admin/role_list.jsp"></forward>
+		</action>
+		<action path="/roleDelete" type="com.odabasioglu.action.general.RoleDeleteAction" >
+			<forward name="listRole" path="/jsp/admin/role_list.jsp"></forward>
+		</action>
+		<action path="/roleUpdate" type="com.odabasioglu.action.general.RoleUpdateAction" name="userForm" input="/jsp/user/user_update.jsp">
+			<forward name="userList" path="/jsp/admin/user_list.jsp"></forward>
+		</action>
+		<action path="/parameterUpdate" type="com.odabasioglu.action.general.ParameterUpdateAction" name="parameterForm" input="/jsp/admin/parameter_details.jsp">
+			<forward name="listParameter" path="/jsp/admin/parameters_list.jsp"></forward>
+		</action>
+	
+
+	</action-mappings>
+
+	<!-- Message Resources -->
+	<message-resources parameter="com.odabasioglu.resources.application" />
+	<message-resources parameter="com.odabasioglu.resources.formtext_tr" />
+
+</struts-config>
