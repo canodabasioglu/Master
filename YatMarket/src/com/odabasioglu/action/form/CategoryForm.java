@@ -12,7 +12,7 @@ import org.apache.struts.upload.FormFile;
 /**
  * Form bean for a Struts application.
  * @version 	1.0
- * @author can odabasioglu
+ * @author can odabasioglu2
  */
 public class CategoryForm extends ActionForm {
 
