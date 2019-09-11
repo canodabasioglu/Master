@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbLogs" table="TB_LOGS">
+	
+		<id
+			column="LOG_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="OBJECT_NAME"
+			length="100"
+			name="ObjectName"
+			not-null="true"
+			type="string"
+		 />
+		 <property
+			column="OBJECT_DESC"
+			length="240"
+			name="ObjectDesc"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="MODIFIED_DATE"
+			length="23"
+			name="ModifiedDate"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="LOG_TYPE"
+			length="2"
+			name="LogType"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="USER_ID"
+			length="10"
+			name="UserId"
+			not-null="true"
+			type="integer"
+		 />
+		 <property
+			column="LOG_IP"
+			length="15"
+			name="LogIp"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="OPERATION_TYPE"
+			name="OperationType"
+			not-null="true"
+			type="string"
+		 />
+	</class>
+</hibernate-mapping>

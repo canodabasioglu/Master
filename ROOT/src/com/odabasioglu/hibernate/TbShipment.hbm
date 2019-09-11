@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbShipment" table="TB_SHIPMENT">
+		<id
+			column="SHIPMENT_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="NAME"
+			length="50"
+			name="Name"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="DESCRIPTION"
+			length="200"
+			name="Description"
+			not-null="true"
+			type="string"
+		 />
+	</class>
+</hibernate-mapping>

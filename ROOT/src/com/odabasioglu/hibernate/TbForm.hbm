@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbForm" table="TB_FORM">
+		
+		<id
+			column="FORM_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="MODIFIED_DATE"
+			length="23"
+			name="ModifiedDate"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="DESCRIPTION"
+			length="1000"
+			name="Description"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="FORM_STATUS"
+			length="2"
+			name="FormStatus"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="TOPIC"
+			length="50"
+			name="Topic"
+			not-null="true"
+			type="string"
+		 />
+
+		<many-to-one
+			class="TbUsers"
+			name="Users"
+			not-null="true"
+		>
+			<column name="USERS_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class
+		name="TbLov"
+		table="tb_lov"
+	>
+		<id
+			name="Id"
+			type="integer"
+			column="LOV_ID"
+		>
+			<generator class="identity"/>
+		</id>
+
+		<property
+			name="Name"
+			column="NAME"
+			type="string"
+			not-null="true"
+			length="25"
+		/>
+		<property
+			name="Label"
+			column="LABEL"
+			type="string"
+			not-null="true"
+			length="200"
+		/>
+		<property
+			name="Type"
+			column="TYPE"
+			type="string"
+			not-null="true"
+			length="25"
+		/>
+		<property
+			name="Value"
+			column="VALUE"
+			type="string"
+			not-null="true"
+			length="25"
+		/>
+		<property
+			name="Language"
+			column="LANGUAGE"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="Order"
+			column="ORDER"
+			type="integer"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

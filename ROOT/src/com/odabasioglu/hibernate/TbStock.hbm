@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbStock" table="TB_STOCK">
+		<id
+			column="STOCK_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="AMOUNT"
+			length="10"
+			name="Amount"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="MODIFIED_DATE"
+			length="23"
+			name="ModifiedDate"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="INFO"
+			length="200"
+			name="Info"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="STOCK_STATUS"
+			length="1"
+			name="StockStatus"
+			not-null="true"
+			type="integer"
+		 />
+	</class>
+</hibernate-mapping>

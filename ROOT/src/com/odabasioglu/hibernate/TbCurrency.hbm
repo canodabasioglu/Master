@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbCurrency" table="TB_CURRENCY">
+		
+		<id
+			column="CURRENCY_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		
+		<property
+			column="EURO"
+			length="10"
+			name="Euro"
+			not-null="true"
+			type="float"
+		 />
+		
+		<property
+			column="USD"
+			length="10"
+			name="Usd"
+			not-null="true"
+			type="float"
+		 />
+		<property
+			column="CURRENCY_DATE"
+			length="16"
+			name="CurrencyDate"
+			not-null="true"
+			type="date"
+		 />
+	</class>
+</hibernate-mapping>

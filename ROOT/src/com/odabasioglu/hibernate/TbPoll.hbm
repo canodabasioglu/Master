@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbPoll" table="TB_POLL">
+		<id
+			column="POLL_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="TITLE"
+			length="10"
+			name="Title"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="MODIFIED_DATE"
+			length="23"
+			name="ModifiedDate"
+			not-null="false"
+			type="timestamp"
+		 />
+		<property
+			column="DESCRIPTION"
+			length="500"
+			name="Description"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="CHOOSE"
+			length="10"
+			name="Choose"
+			not-null="false"
+			type="string"
+		 />
+
+		<many-to-one
+			class="TbUsers"
+			name="Users"
+			not-null="true"
+		>
+			<column name="USERS_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.odabasioglu.data">
+	<class name="TbOrderline" table="TB_ORDERLINE" lazy="false">
+		<!-- please tell Joe Hudson that the type 'numeric() identity' could not be resolved.. defaulting to java.lang.String -->
+		<id
+			column="ORDERLINE_ID"
+			name="Id"
+			type="integer"
+		>
+			<generator class="identity" />
+		</id>
+		<property
+			column="AMOUNT"
+			length="4"
+			name="Amount"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="LOG_ID"
+			length="10"
+			name="LogId"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="STATUS"
+			length="1"
+			name="Status"
+			not-null="false"
+			type="integer"
+		 />
+		
+		<property
+			column="PRICE"
+			length="10"
+			name="Price"
+			not-null="true"
+			type="float"
+		 />
+		<property
+			column="ORDER_ID"
+			length="10"
+			name="OrderId"
+			not-null="false"
+			type="integer"
+		 />
+
+		<many-to-one
+			class="TbProduct"
+			name="Product"
+			not-null="true"
+		>
+			<column name="PRODUCT_ID" />
+		</many-to-one>
+		<many-to-one
+			class="TbUsers"
+			name="Users"
+			not-null="true" lazy="false"
+		>
+			<column name="USERS_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>
